@@ -1,0 +1,18 @@
+%!TEX root = TTK4150-Summary.tex
+\section{Input-to-state stability (ISS)}
+
+\paragraph{Theorem 4.19}
+Let $V : [0,\infty) \times R^n \rightarrow R$ be cont. diff.able such that
+\begin{equation}
+	\alpha_1(||x||) \leq V(t,x) \leq \alpha_2(||x||)
+\end{equation}
+\begin{equation}
+	\dot{V} \leq -W_3(x) \quad \forall \quad ||x|| \geq \rho(||u||) > 0
+\end{equation}
+$\forall (t,x,u) \in [0,\infty) \times R^n \times R^m$, where
+\begin{itemize}
+	\item $\alpha_1, \alpha_2$ are class $\mathcal{K}_\infty$ functions,
+	\item $\rho$ is a class $\mathcal{K}$ function, and
+	\item $W_3(x)$ is a cont. pos. def. function on $R^n$.
+\end{itemize}
+Then, the system is ISS with $\gamma=\alpha_1^{-1} \circ \alpha_2 \circ \rho$.
