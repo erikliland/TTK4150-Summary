@@ -62,7 +62,7 @@
 	=
 	\begin{bmatrix}
 		\pd{f_1}{x_1} & \cdots & \pd{f_1}{x_n} \\
-		\vdots        &        & \vdots        \\
+		\vdots        & \ddots & \vdots        \\
 		\pd{f_m}{x_1} & \cdots & \pd{f_m}{x_n}
 	\end{bmatrix}
 \end{equation}
@@ -79,24 +79,24 @@ A matrix $A$ is \emph{Hurwitz} if all eigenvalues of $A$ satisfy $\Re \lambda_i 
 A continuous function $\alpha : [0,a) \rightarrow [0, \infty)$ belongs to class $\mathcal{K}$ iff
 \begin{itemize}
 	\item it is stricly increasing,
-	\item $\alpha(0) = 0$
+	\item $\alpha(0) = 0$.
 \end{itemize}
 
 \paragraph{Class $\mathcal{K}_\infty$ function}
 A function belongs to class $\mathcal{K}_\infty$ iff
 \begin{itemize}
-	\item it is of class $\mathcal{K}$
-	\item $a = \infty$
-	\item $\alpha(r) \xrightarrow{r \rightarrow \infty} \infty$
+	\item it is of class $\mathcal{K}$,
+	\item $a = \infty$,
+	\item $\alpha(r) \xrightarrow{r \rightarrow \infty} \infty$.
 \end{itemize}
 
 \paragraph{Class $\mathcal{KL}$ function}
 A continunous function $\beta : [0,a) \times [0,\infty) \rightarrow [0,\infty)$ belongs to class $\mathcal{KL}$ if for each fixed $s$
 \begin{itemize}
-	\item $\beta(r,s)$ is a class $\mathcal{K}$ function wrt. $r$
+	\item $\beta(r,s)$ is a class $\mathcal{K}$ function wrt. $r$,
 \end{itemize}
 and for each fixed $r$
 \begin{itemize}
-	\item $\beta(r,s)$ is decreasing wrt. $s$
-	\item $\beta(r,s) \xrightarrow{s \rightarrow \infty} 0$
+	\item $\beta(r,s)$ is decreasing wrt. $s$,
+	\item $\beta(r,s) \xrightarrow{s \rightarrow \infty} 0$.
 \end{itemize}
