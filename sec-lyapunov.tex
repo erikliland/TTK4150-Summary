@@ -1,0 +1,22 @@
+%!TEX root = TTK4150-Summary.tex
+\section{Lyapunov stability}
+
+\subsection{Invariance principle}
+
+\paragraph{Invariant sets} A set $M$ is an \emph{invariant set} w.r.t. $\dot{x} = f(x)$ if
+\begin{equation}
+	x(0) \in M \implies x(t) \in M, \forall t \in \mathbb{R}.
+\end{equation}
+(Any solution in $M$ stays in $M$ for all future and past.)
+
+\paragraph{Theorem 4.4 (LaSalle's theorem)}
+If $\exists \: V : \mathbb{D} \rightarrow \mathbb{R}$ such that
+\begin{itemize}
+	\item $V$ is $C^1$,
+	\item $\exists \: c > 0$ such that $\Omega_c = \{x \in \mathbb{R}^n | V(x) \leq c \} \subset \mathbb{D}$ is bounded,
+	\item $\dot{V}(x) \leq 0 \quad \forall \quad x \in \Omega_c$.
+\end{itemize}
+Let $E = \{ x \in \Omega_c | \dot{V}(x) = 0 \}$. Let $M$ be the largest invariant set in $E$. Then
+\begin{equation}
+	x(0) \in \Omega_c \implies \lim_{t \to \infty} x(t) = M.
+\end{equation}

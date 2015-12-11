@@ -32,13 +32,14 @@ If $\exists \: a, k_1, k_2, k_3 > 0$ such that
 then the origin is \emph{exponentially stable}. If $\mathbb{D} = \mathbb{R}^n$, the origin is \emph{globally} exponentially stable.
 
 \paragraph{Corollary 4.3}
-The origin is ES iff $A$ is Hurwitz, with
+The origin is ES iff $A$ is Hurwitz, where
 \begin{equation}
 	A =
 	\begin{bmatrix}
 		\pd{f}{x}
 	\end{bmatrix}
 	\evalat{x=0}
+	.
 \end{equation}
 
 \section{Lyapunov shit}
@@ -80,11 +81,3 @@ Then,
 	\item The origin is asymp. stable if $\Re \lambda_i < 0$ for all eigenvalues of A.
 	\item The origin is unstable if $\Re \lambda_i > 0$ for any eigenvalue of A.
 \end{enumerate}
-
-\paragraph{Theorem 4.4 (LaSalle's theorem)}
-If $\exists V : \mathbb{D} \rightarrow \mathbb{R}$ such that
-\begin{itemize}
-	\item $V$ is $C^1$
-	\item $\exists c > 0$ such that $\Omega_c = {x \in \mathbb{R}^n | V(x) \leq c} \in \mathbb{D}$ 
-	\item $\dot{V}(x) \leq 0 \quad \forall \quad x \in \Omega_c$
-\end{itemize}
