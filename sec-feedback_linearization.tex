@@ -2,72 +2,93 @@
 \section{Feedback linearization}
 Consider a class of nonlinear systems of the form
 
-\begin{equation}
-   \begin{split}
-      \dot{x} &= f(x) + G(x)u \\
-         y &=h(x) \\
-         u &= \alpha (x) + \beta (x) v \\
-         z &= T(x)
-   \end{split}
-   \label{eq:nonlinear-system}
+\begin{equation}\label{eq:nonlinear-system}
+	\begin{split}
+		\dot{x} &= f(x) + G(x)u             \\
+		y       &= h(x)                     \\
+		u       &= \alpha (x) + \beta (x) v \\
+		z       &= T(x)
+	\end{split}
 \end{equation}
-where u is a state feedback conboller, and T is a change of variables.
+where $u$ is a state feedback conboller, and $T$ is a change of variables.
 
-To be able to cancel nonlinearities with feedback the input and non-linearities must appear together as a sum $\lambda (x) + u$ or as a product $\lambda (x) u$, where the matrix $\lambda(x)$ is non-singular in the domain of interest, where $u=\beta(x)v, \beta(x)=\lambda^{-1}$.
+To be able to cancel nonlinearities with feedback the input and non-linearities must appear together as a sum $\lambda (x) + u$ or as a product $\lambda (x) u$, where the matrix $\lambda(x)$ is non-singular in the domain of interest, and $u = \beta(x) v, \beta(x) = \lambda^{-1}$.
 
 \paragraph{Definition 13.1}
-A nonlinear system as \ref{eq:nonlinear-system} where $f:D \rightarrow R^n$ and $G : D \rightarrow R^{n \times p}$ are sufficiently smooth on a domain $D \subset R^n$, is said to be feedback linearizable  (or input-state linearizable) if there exist a diffeomorphism $T:D \rightarrow R^n$ such that $D_z = T(D)$ contains the origin and the change of variables $z = T(x)$ transforms the system \ref{eq:nonlinear-system} into the form
+A nonlinear system as \eqref{eq:nonlinear-system} where $f:D \to R^n$ and $G : D \to R^{n \times p}$ are sufficiently smooth on a domain $D \subseteq R^n$, is said to be feedback linearizable  (or input-state linearizable) if there exists a diffeomorphism $T:D \to R^n$ such that $D_z = T(D)$ contains the origin and the change of variables $z = T(x)$ transforms \eqref{eq:nonlinear-system} into the form
 \begin{equation}
-\dot{z} = Az + B\lambda (x) [u - \alpha(x)]
+	\dot{z} = Az + B\lambda (x) [u - \alpha(x)]
 \end{equation}
-with (A,B) controllable and $\lambda(x)$ nonsingular $\forall x \in D$.
+with $(A,B)$ controllable and $\lambda(x)$ nonsingular $\forall x \in D$.
 
-\subsection{Input-Output linearization}
-Consider a system as \ref{eq:nonlinear-system} which satisfies Def.13.1. The derivative $\dot{y}$ is given by
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Input-output linearization}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Consider \eqref{eq:nonlinear-system} which satisfies Def. 13.1. The derivative $\dot{y}$ is given by
 \begin{equation}
-	\dot{y} = \frac{\partial h}{\partial x}\del{f(x) + g(x)} \triangleq L_f h(x) + L_g h(x) u
+	\dot{y} = \pd{h}{x} \del{f(x) + g(x)} \triangleq L_f h(x) + L_g h(x) u
 \end{equation}
-where $L_f h(x) = \frac{\partial h}{\partial x} f(x) $ is called the\emph{ Lie Derivative} of h with respect to f.
-\paragraph{Relative degree} Number of times you need to derivate $y$ to see $u \in D_0 \subset D$.
-A system need to have a well defined relative degree to be input-output linearizable. It must also be minimum phase.
+where $L_f h(x) \triangleq \pd{h}{x} f(x) $ is the \emph{Lie Derivative} of $h$ w.r.t. $f$.
 
-\paragraph{Diffeomorphism} Wikipedia: \emph{In mathematics, a diffeomorphism is an isomorphism of smooth manifolds. It is an invertible function that maps one differentiable manifold to another such that both the function and its inverse are smooth.}
+\paragraph{Relative degree}
+The relative degree is the number of times $y$ must be differentiated until $u \in D_0 \subseteq D$ appears. A system must have a well defined relative degree to be input-output linearizable. (It must also be minimum phase.)
 
-\paragraph{Theorem 13.1} Consider the system \ref{eq:nonlinear-system}, and suppose it has relative degree $\rho \leq n$ in D. If $\rho = n$, then for every $x_0 \in D$, a neighborhood N of $x_0$ exist such that the map
+\paragraph{Diffeomorphism}
+Wikipedia: \emph{In mathematics, a diffeomorphism is an isomorphism of smooth manifolds. It is an invertible function that maps one differentiable manifold to another such that both the function and its inverse are smooth.}
+
+\paragraph{Theorem 13.1}
+Consider \eqref{eq:nonlinear-system} with relative degree $\rho \leq n$ in D. If $\rho = n$, then for every $x_0 \in D$, a neighborhood N of $x_0$ exists such that the map
 \begin{equation}
-T(x) = \left[
-\begin{array}{ccc}
-h(x)\\
-L_f h(x)\\
-\vdots \\
-L_f^{n-1} h(x)
-\end{array}
-\right]
+	T(x) =
+	\left[
+	\begin{array}{ccc}
+		h(x)     \\
+		L_f h(x) \\
+		\vdots   \\
+		L_f^{n-1} h(x)
+	\end{array}
+	\right]
 \end{equation}
 restricted to N, is a diffeomorphism on N. If $\rho < n$, then, for every $x_0 \in D$, a neighborhood N of $x_0$ and smooth function $\phi_1 (x), \dots , \phi_{n-\rho} (x)$ exist such that 
 \begin{equation}
-\frac{\partial \phi_i}{\partial x}g(x) = 0, for 1\leq i \leq n-\rho, \forall x \in D_0
+	\pd{\phi_i}{x} g(x) = 0, \mbox{ for } 1 \leq i \leq n-\rho, \forall x \in D_0
 \end{equation}
 is satisfied $\forall x \in N$ and the map
 \begin{equation}
-z=T(x) =
-\left[ \begin{array}{ccc}
-\phi_1(x) \\ \vdots \\ \phi_{n-\rho}(x) \\ --- \\ h(x) \\ \vdots \\ L_f^{\rho-1} h(x)
-\end{array} \right]
-\triangleq
-\left[ \begin{array}{ccc}
-\phi(x) \\ --- \\ \psi(x)
-\end{array} \right]
-\triangleq
-\left[ \begin{array}{ccc}
-\eta \\ --- \\ \xi
-\end{array} \right]
+	z = T(x) =
+	\left[
+	\begin{array}{ccc}
+		\phi_1(x)         \\
+		\vdots            \\
+		\phi_{n-\rho}(x)  \\
+		---               \\
+		h(x)              \\
+		\vdots            \\
+		L_f^{\rho-1} h(x)
+	\end{array}
+	\right]
+	\triangleq
+	\left[
+	\begin{array}{ccc}
+		\phi(x) \\
+		---     \\
+		\psi(x)
+	\end{array}
+	\right]
+	\triangleq
+	\left[
+	\begin{array}{ccc}
+		\eta \\
+		---  \\
+		\xi
+	\end{array}
+	\right]
 \end{equation}
 restricted to N, is a diffeomorphism on N.
 
 \paragraph{Method}
 \begin{enumerate}
-	\item Set system on following form $\dot{x} = f(x)+g(x)u$
+	\item Set system on following form $\dot{x} = f(x) + g(x)u$
 	\item Find the relative degree $\rho$, ($\rho = n \Rightarrow$ no internal dynamics)
 	\item Write the system in normal form (external and internal dynamics)
 	\item Choose $u$ to cancel the nonlinearities
@@ -75,8 +96,10 @@ restricted to N, is a diffeomorphism on N.
 	\item Choose $v$ to solve the control problem
 \end{enumerate}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Full-state linearization}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{State feedback control}
-
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
