@@ -1,6 +1,10 @@
 %!TEX root = TTK4150-Summary.tex
 \section{Input-to-state stability (ISS)}
 
+\begin{equation}\label{eq:iss-system}
+	\dot{x} = f(t,x,u)
+\end{equation}
+
 \paragraph{Theorem 4.19}
 Let $V : [0,\infty) \times R^n \rightarrow R$ be cont. diff.able such that
 \begin{equation}
@@ -11,8 +15,24 @@ Let $V : [0,\infty) \times R^n \rightarrow R$ be cont. diff.able such that
 \end{equation}
 $\forall (t,x,u) \in [0,\infty) \times R^n \times R^m$, where
 \begin{itemize}
-	\item $\alpha_1, \alpha_2$ are class $\mathcal{K}_\infty$ functions,
-	\item $\rho$ is a class $\mathcal{K}$ function, and
+	\item $\alpha_1, \alpha_2 \in \mathcal{K}_\infty$,
+	\item $\rho \in \mathcal{K}$, and
 	\item $W_3(x)$ is a cont. pos. def. function on $\mathbb{R}^n$.
 \end{itemize}
 Then, the system is ISS with $\gamma=\alpha_1^{-1} \circ \alpha_2 \circ \rho$.
+
+\paragraph{ISS vs. 0-GUAS}
+\begin{gather}
+	\Sigma \mbox{ ISS} \implies \Sigma \mbox{ 0-GUAS} \\
+	\neg (\Sigma \mbox{ 0-GUAS}) \implies \neg (\Sigma \mbox{ ISS})
+\end{gather}
+
+\paragraph{Lemma 4.6 (ISS vs. 0-GES)}
+For \eqref{eq:iss-system} with $f \in C^1$ and $f$ globally Lipschitz in $(x,u)$, then
+\begin{equation}
+	\Sigma \mbox{ 0-GES} \implies \Sigma \mbox{ ISS}
+	.
+\end{equation}
+
+\paragraph{Lemma 4.7}
+The cascade of a GUAS and an ISS system is ISS. (Output of GUAS is the input of ISS.)
