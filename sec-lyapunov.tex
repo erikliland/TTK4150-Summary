@@ -42,7 +42,7 @@ If $\exists$ an SLF $V$ for the origin and $V$ is radially unbounded, then the o
 If $\exists \: V : \mathbb{D} \to \mathbb{R}$ such that
 \begin{itemize}
 	\item $V \in C^1$,
-	\item $\exists \: c > 0$ such that $\Omega_c = \{x \in \mathbb{R}^n | V(x) \leq c \} \subset \mathbb{D}$ is bounded,
+	\item $\exists \: c > 0$ such that $\Omega_c = \{x \in \mathbb{R}^n | V(x) \leq c \} \subseteq \mathbb{D}$ is bounded,
 	\item $\dot{V}(x) \leq 0 \quad \forall \quad x \in \Omega_c$.
 \end{itemize}
 Let $E = \{ x \in \Omega_c | \dot{V}(x) = 0 \}$. Let $M$ be the largest invariant set in $E$. Then
@@ -151,3 +151,42 @@ The origin of $\dot{x} = f(x)$ is ES iff $A$ is Hurwitz, where
 	\evalat{x=0}
 	.
 \end{equation}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Input-to-state stability}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{equation}\label{eq:iss-system}
+	\dot{x} = f(t,x,u)
+\end{equation}
+
+\paragraph{Theorem 4.19}
+Let $V : [0,\infty) \times \mathbb{R}^n \to \mathbb{R}$ be cont. diff.able such that
+\begin{equation}
+	\alpha_1 \left( ||x|| \right) \leq V(t,x) \leq \alpha_2 \left( ||x|| \right)
+\end{equation}
+\begin{equation}
+	\dot{V} \leq -W_3(x) \quad \forall \quad ||x|| \geq \rho \left( ||u|| \right) > 0
+\end{equation}
+$\forall (t,x,u) \in [0,\infty) \times R^n \times R^m$, where
+\begin{itemize}
+	\item $\alpha_1, \alpha_2 \in \mathcal{K}_\infty$,
+	\item $\rho \in \mathcal{K}$, and
+	\item $W_3(x)$ is a cont. pos. def. function on $\mathbb{R}^n$.
+\end{itemize}
+Then, the system is ISS with $\gamma=\alpha_1^{-1} \circ \alpha_2 \circ \rho$.
+
+\paragraph{ISS vs. 0-GUAS}
+\begin{gather}
+	\Sigma \mbox{ ISS} \implies \Sigma \mbox{ 0-GUAS} \\
+	\neg (\Sigma \mbox{ 0-GUAS}) \implies \neg (\Sigma \mbox{ ISS})
+\end{gather}
+
+\paragraph{Lemma 4.6 (ISS vs. 0-GES)}
+For \eqref{eq:iss-system} with $f \in C^1$ and $f$ globally Lipschitz in $(x,u)$, then
+\begin{equation}
+	\Sigma \mbox{ 0-GES} \implies \Sigma \mbox{ ISS}
+	.
+\end{equation}
+
+\paragraph{Lemma 4.7}
+The cascade of a GUAS and an ISS system is ISS. (Output of GUAS is the input of ISS.)
