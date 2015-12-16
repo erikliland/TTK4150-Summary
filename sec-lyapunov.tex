@@ -34,20 +34,20 @@ If $\exists$ an SLF $V$ for the origin and $V$ is radially unbounded, then the o
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \paragraph{Invariant sets} A set $M$ is an \emph{invariant set} w.r.t. $\dot{x} = f(x)$ if
 \begin{equation}
-	x(0) \in M \implies x(t) \in M, \forall t \in \mathbb{R}.
+	x(0) \in M \implies x(t) \in M \quad \forall t \in \mathbb{R}.
 \end{equation}
 (Any solution in $M$ stays in $M$ for all future and past.)
 
 \paragraph{Theorem 4.4 (LaSalle's theorem)}
 If $\exists \: V : \mathbb{D} \to \mathbb{R}$ such that
 \begin{itemize}
-	\item $V$ is $C^1$,
+	\item $V \in C^1$,
 	\item $\exists \: c > 0$ such that $\Omega_c = \{x \in \mathbb{R}^n | V(x) \leq c \} \subset \mathbb{D}$ is bounded,
 	\item $\dot{V}(x) \leq 0 \quad \forall \quad x \in \Omega_c$.
 \end{itemize}
 Let $E = \{ x \in \Omega_c | \dot{V}(x) = 0 \}$. Let $M$ be the largest invariant set in $E$. Then
 \begin{equation}
-	x(0) \in \Omega_c \implies \lim_{t \to \infty} x(t) = M.
+	x(0) \in \Omega_c \implies x(t) \xrightarrow{t \to \infty} M.
 \end{equation}
 
 \paragraph{Corollary 4.1} Let $x^* = 0$ for $\dot{x} = f(x)$. If for an LF $V(x)$ we have $\dot{V}(x) \leq 0$ on $D$: Let $S = \{ x \in D | \dot{V}(x) = 0 \}$ and only $x(t) \equiv 0$ can stay in $S$, then $x = 0$ AS.
@@ -79,7 +79,7 @@ A continuous function $\alpha : [0,a) \to [0, \infty)$ belongs to class $\mathca
 \end{itemize}
 
 \paragraph{Class $\mathcal{K}_\infty$ function}
-A function belongs to class $\mathcal{K}_\infty$ iff
+A continuous function $\alpha : [0,a) \to [0, \infty)$ belongs to class $\mathcal{K}_\infty$ iff
 \begin{itemize}
 	\item it is of class $\mathcal{K}$,
 	\item $a = \infty$,
@@ -132,9 +132,9 @@ Let $V : [0,\infty) \times \mathbb{D} \to \mathbb{R}$ and $V \in \mathbb{C}^1$ f
 \paragraph{Theorem 4.10 (exponential stability)}
 If $\exists \: a, k_1, k_2, k_3 > 0$ such that
 \begin{itemize}
-	\item $V$ is $C^1$
-	\item $k_1 ||x||^a \leq V(x) \leq k_2 ||x||^a \quad \forall \: x \in \mathbb{D}$
-	\item $\dot{V}(x) \leq - k_3 ||x||^a \quad \forall \: x \in \mathbb{D}$
+	\item $V \in C^1$
+	\item $k_1 \norm{x}^a \leq V(x) \leq k_2 \norm{x}^a \quad \forall \: x \in \mathbb{D}$
+	\item $\dot{V}(x) \leq - k_3 \norm{x}^a \quad \forall \: x \in \mathbb{D}$
 \end{itemize}
 then $x = 0$ ES. If $\mathbb{D} = \mathbb{R}^n$, $x = 0$ is GES.
 
@@ -142,7 +142,7 @@ then $x = 0$ ES. If $\mathbb{D} = \mathbb{R}^n$, $x = 0$ is GES.
 \subsection{Converse theorems}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \paragraph{Corollary 4.3}
-The origin is ES iff $A$ is Hurwitz, where
+The origin of $\dot{x} = f(x)$ is ES iff $A$ is Hurwitz, where
 \begin{equation}
 	A =
 	\begin{bmatrix}

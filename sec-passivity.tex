@@ -26,8 +26,12 @@ The system $y = h(t,u)$ is
 The system \eqref{eq:passive1}--\eqref{eq:passive2} with storage function $V(x) \geq 0$ is
 \begin{itemize}
 	\item passive if $u\T y \geq \dot{V}$,
-	\item output-feedback passive if $u\T y \geq \dot{V} + y\T \rho(y)$ for some function $\rho$.
-	\item output strictly passive if it is OFP with $y\T \rho(y) > 0 \: \forall \: y \neq 0$.
+	\item lossless if $u\T y = \dot{V}$,
+	\item input-feedforward passive if $u\T y \geq \dot{V} + u\T \phi(u)$ for some function $\phi$,
+	\item input strictly passive if it is IFP with $u\T \phi(u) > 0 \: \forall \: u \neq 0$,
+	\item output-feedback passive if $u\T y \geq \dot{V} + y\T \rho(y)$ for some function $\rho$,
+	\item output strictly passive if it is OFP with $y\T \rho(y) > 0 \: \forall \: y \neq 0$,
+	\item strictly passive if $u\T y \geq \dot{V} + \psi(x)$ for some pos. def $\psi$.
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
