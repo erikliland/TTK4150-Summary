@@ -6,24 +6,24 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \paragraph{General $p$-norm}
 \begin{equation}
-	||x||_p
+	\norm{x}_p
 	=
 	\left(
-		\sum_{i=1}^{n} |x_i|^p
+		\sum_{i=1}^{n} \abs{x_i}^p
 	\right)
 	^{1/p}
 \end{equation}
 
 \paragraph{Taxicab norm ($p=1$)}
 \begin{equation}
-	||x||_1
+	\norm{x}_1
 	=
-	\sum_{i=1}^{n} |x_i|
+	\sum_{i=1}^{n} \abs{x_i}
 \end{equation}
 
 \paragraph{Euclidean norm ($p=2$)}
 \begin{equation}
-	||x||_2
+	\norm{x}_2
 	=
 	\sqrt{x_1^2 + \cdots + x_n^2}
 \end{equation}
@@ -35,18 +35,18 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \paragraph{$\mathcal{L}_p$-norm}
 \begin{equation}
-	||f||_p
+	\norm{f}_p
 	=
 	\left(
-		\int_a^b |f(\tau)|^p \dif \tau
+		\int_a^b \abs{f(\tau)}^p \dif \tau
 	\right)^{1/p}
 \end{equation}
 
 \paragraph{$\mathcal{L}_\infty$-norm}
 \begin{equation}
-	||f||_\infty
+	\norm{f}_\infty
 	=
-	\sup_{a \leq t \leq b} |f(t)|
+	\sup_{a \leq t \leq b} \abs{f(t)}
 \end{equation}
 
 \paragraph{Boundedness}
