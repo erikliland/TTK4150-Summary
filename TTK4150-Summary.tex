@@ -2,6 +2,7 @@
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
+\usepackage[hidelinks]{hyperref}
 \usepackage{commath}
 \usepackage{mathtools}
 \usepackage{amssymb}
@@ -9,6 +10,10 @@
 \usepackage{libertine}
 \usepackage{mortenmath}
 \usepackage{graphicx}
+
+% Make ligatures and stuff copiable from pdf:
+\input{glyphtounicode}
+\pdfgentounicode=1
 
 \title{Summary of\\TTK4150 Nonlinear Control Systems}
 \author{Morten Fyhn Amundsen}
@@ -21,24 +26,25 @@
 
 \section{Todo}
 \begin{itemize}
-	\item Types of equilibria
 	\item Estimate of $R_A$
 	\item Pos. def. and decrescent for LTV.
 	\item K/KL-based stability (p28 slide6)
-	\item Invariant sets
 	\item L/L-infinity stability
 	\item Def. 5.1
 	\item Theorem 10.4
 	\item Backstepping
 	\item Sliding mode control
+	\item Nonvanishing perturbation.
 \end{itemize}
 
-\input{sec-math.tex}
+\input{sec-math}
 \input{sec-phaseplane}
 \input{sec-lyapunov}
-\input{sec-iss.tex}
 \input{sec-passivity}
-\input{temp.tex}
 \input{sec-feedback_linearization}
+\input{sec-perturbed}
+\input{sec-averaging}
+\input{sec-feedback-lin}
+\input{sec-backstepping}
 
 \end{document}
