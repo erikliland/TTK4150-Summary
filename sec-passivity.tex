@@ -1,5 +1,9 @@
 %!TEX root = TTK4150-Summary.tex
 \section{Passivity}
+\begin{align}
+	\dot{x} &= f(x,u) \label{eq:passive1} \\
+	y       &= h(x,u) \label{eq:passive2}
+\end{align}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Memoryless functions}
@@ -19,7 +23,7 @@ The system $y = h(t,u)$ is
 \subsection{State models}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \paragraph{Definition 6.3}
-The system $\dot{x} = f(x,u), y = h(x,u)$ is, given storage function $V(x) \geq 0$,
+The system \eqref{eq:passive1}--\eqref{eq:passive2} with storage function $V(x) \geq 0$ is
 \begin{itemize}
 	\item passive if $u\T y \geq \dot{V}$,
 	\item output-feedback passive if $u\T y \geq \dot{V} + y\T \rho(y)$ for some function $\rho$.
@@ -35,7 +39,7 @@ The system $\dot{x} = f(x,u), y = h(x,u)$ is, given storage function $V(x) \geq 
 If a system is output strictly passive with $\rho(y) = \delta y$ with $\delta > 0$ then it is finite-gain $\mathcal{L}_2$ stable with gain $\gamma \leq \delta^{-1}$.
 
 \paragraph{Definition 6.5 (zero-state observability)}
-The system $\dot{x} = f(x,u), y = h(x,u)$ is zero-state observable if only the solution $x(t) \equiv 0$ of $\dot{x} = f(x,0)$ can stay in $S = \{ x \in \mathbb{R}^n | h(x,0) = 0 \}$.
+The system \eqref{eq:passive1}--\eqref{eq:passive2} is zero-state observable if only the solution $x(t) \equiv 0$ of $\dot{x} = f(x,0)$ can stay in $S = \{ x \in \mathbb{R}^n | h(x,0) = 0 \}$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Feedback systems}
@@ -47,7 +51,7 @@ The system $\dot{x} = f(x,u), y = h(x,u)$ is zero-state observable if only the s
 \end{figure}
 
 \paragraph{Theorem 6.1}
-The feedback connection of two passive systems is passive. (With $V = V_1 + V_2$.)
+The feedback connection of two passive systems is passive, with $V = V_1 + V_2$.
 
 \paragraph{Theorem 6.2 ($\mathcal{L}_2$-stability of feedback connection)}
 If $H_1$ and $H_2$ satisfy
