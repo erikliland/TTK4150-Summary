@@ -33,7 +33,7 @@
 	{Boundedness and Lp-norms}]
 	{Boundedness and $\mathcal{L}_p$-norms}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\paragraph{$\mathcal{L}_p$ norm}
+\paragraph{$\mathcal{L}_p$-norm}
 \begin{equation}
 	||f||_p
 	=
@@ -42,7 +42,7 @@
 	\right)^{1/p}
 \end{equation}
 
-\paragraph{$\mathcal{L}_\infty$ norm}
+\paragraph{$\mathcal{L}_\infty$-norm}
 \begin{equation}
 	||f||_\infty
 	=
@@ -51,8 +51,17 @@
 
 \paragraph{Boundedness}
 \begin{equation}
-	f \in \mathcal{L}_p \Leftrightarrow \exists \: c : ||f||_p \leq c
+	f \in \mathcal{L}_p \Leftrightarrow \norm{f}_p < \infty
 \end{equation}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Properties of norms}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\paragraph{Hölder's inequality}
+\begin{equation}
+	\norm{fg}_1 \leq \norm{f}_p \norm{g}_q
+\end{equation}
+with $\frac{1}{p} + \frac{1}{q} = 1$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Matrix properties}
